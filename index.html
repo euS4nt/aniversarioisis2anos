@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aniversário da Ísis</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            /* Substituído a cor amarela pela imagem de fundo */
+            background: url('fundo-magali.webp') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Estilo para as Magalis laterais */
+        .magali-lateral {
+            position: fixed;
+            bottom: 0;
+            width: 270px; 
+            z-index: -1;
+        }
+
+        /* Ajustado posicionamento para serem visíveis nas laterais */
+        .magali-esquerda { left: 50px; }
+        .magali-direita { right: 50px; }
+
+        .container {
+            background: white;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5); /* Sombra um pouco mais forte para destacar do fundo */
+            text-align: center;
+            border: 5px solid #ff4d4d;
+            margin: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-img { width: 100%; height: auto; display: block; }
+        .content { padding: 20px; }
+        h1 { color: #ff4d4d; font-size: 2.5em; margin: 10px 0; }
+
+        .idade {
+            background: #4CAF50;
+            color: white;
+            display: inline-block;
+            padding: 5px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .info { font-size: 1.1em; color: #333; margin: 10px 0; line-height: 1.6; }
+
+        .btn {
+            display: block;
+            margin: 10px auto;
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+            max-width: 250px;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+
+        .btn-presente { background-color: #ff8c00; color: white; font-size: 1em; }
+        .btn-mapa { background-color: #f0f0f0; color: #333; border: 1px solid #ccc; }
+        .btn-whatsapp { background-color: #25d366; color: white; }
+
+        #lista-presentes {
+            display: none;
+            background: #fff9e6;
+            margin: 10px auto;
+            padding: 15px;
+            border-radius: 15px;
+            border: 2px dashed #ff8c00;
+            max-width: 250px;
+            text-align: left;
+        }
+
+        .btn:hover { transform: scale(1.05); opacity: 0.9; }
+        .footer { margin-top: 20px; font-size: 0.9em; color: #777; padding-bottom: 20px; }
+
+        @media (max-width: 1100px) {
+            /* Esconde as magalis laterais em telas médias/pequenas para não sobrepor o convite */
+            .magali-lateral { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="magali3.webp" alt="Festa da Magali" class="header-img">
+        
+        <div class="content">
+            <h1>Ísis</h1>
+            <div class="idade">2 Aninhos</div>
+            
+            <div class="info">
+                <strong>📅 Data:</strong> 08/02<br>
+                <strong>⏰ Horário:</strong> às 13:00h
+            </div>
+
+            <div class="info">
+                <strong>📍 Local:</strong><br>
+                R. Conambaia, 33 - Guaianases<br>
+                São Paulo - SP
+            </div>
+
+            <button class="btn btn-presente" onclick="togglePresentes()">🎁 Sugestão de Presentes</button>
+            
+            <div id="lista-presentes">
+                <strong>Ideias para a Ísis:</strong>
+                <ul style="padding-left: 20px; margin: 10px 0;">
+                    <li>Roupas (Tamanho 3 ou 4)</li>
+                    <li>Brinquedos</li>
+                    <li>Calçados nº 20/21</li>
+                </ul>
+            </div>
+
+            <a href="https://www.google.com/maps/search/?api=1&query=R.+Conambaia,+33+-+Guaianases,+São+Paulo+-+SP" target="_blank" class="btn btn-mapa">
+                📍 Ver no Google Maps
+            </a>
+
+            <a href="https://wa.me/5511980140554?text=Olá! Gostaria de confirmar presença no aniversário de 2 aninhos da Ísis!" target="_blank" class="btn btn-whatsapp">
+                ✅ Confirmar Presença
+            </a>
+
+            <div class="footer">
+                Espero você para essa festa deliciosa! 🍉
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function togglePresentes() {
+            var lista = document.getElementById("lista-presentes");
+            if (lista.style.display === "block") {
+                lista.style.display = "none";
+            } else {
+                lista.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
