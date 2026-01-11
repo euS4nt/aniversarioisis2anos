@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aniversário da Ísis</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            /* Substituído a cor amarela pela imagem de fundo */
+            font-family: 'Varela Round', sans-serif; /* Fonte padronizada */
             background: url('fundo-magali.webp') no-repeat center center fixed;
             background-size: cover;
             display: flex;
@@ -19,25 +21,13 @@
             overflow-x: hidden;
         }
 
-        /* Estilo para as Magalis laterais */
-        .magali-lateral {
-            position: fixed;
-            bottom: 0;
-            width: 270px; 
-            z-index: -1;
-        }
-
-        /* Ajustado posicionamento para serem visíveis nas laterais */
-        .magali-esquerda { left: 50px; }
-        .magali-direita { right: 50px; }
-
         .container {
             background: white;
             width: 90%;
             max-width: 400px;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5); /* Sombra um pouco mais forte para destacar do fundo */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
             text-align: center;
             border: 5px solid #ff4d4d;
             margin: 20px;
@@ -45,39 +35,63 @@
             z-index: 1;
         }
 
-        .header-img { width: 100%; height: auto; display: block; }
-        .content { padding: 20px; }
-        h1 { color: #ff4d4d; font-size: 2.5em; margin: 10px 0; }
+        .header-img { 
+            width: 100%; 
+            height: auto; 
+            display: block; 
+        }
+
+        .content { 
+            padding: 25px; 
+        }
+
+        h1 { 
+            color: #ff4d4d; 
+            font-size: 2.8em; 
+            margin: 10px 0; 
+            letter-spacing: -1px;
+        }
 
         .idade {
             background: #4CAF50;
             color: white;
             display: inline-block;
-            padding: 5px 20px;
+            padding: 8px 30px;
             border-radius: 50px;
             font-weight: bold;
             margin-bottom: 20px;
+            font-size: 1.1em;
         }
 
-        .info { font-size: 1.1em; color: #333; margin: 10px 0; line-height: 1.6; }
+        .info { 
+            font-size: 1.15em; 
+            color: #333; 
+            margin: 15px 0; 
+            line-height: 1.6; 
+        }
 
         .btn {
             display: block;
-            margin: 10px auto;
+            margin: 12px auto;
             padding: 15px 25px;
             text-decoration: none;
             border-radius: 30px;
             font-weight: bold;
             transition: 0.3s;
-            max-width: 250px;
+            max-width: 260px;
             cursor: pointer;
             border: none;
-            font-family: inherit;
+            font-family: 'Varela Round', sans-serif;
+            font-size: 1em;
         }
 
-        .btn-presente { background-color: #ff8c00; color: white; font-size: 1em; }
-        .btn-mapa { background-color: #f0f0f0; color: #333; border: 1px solid #ccc; }
-        .btn-whatsapp { background-color: #25d366; color: white; }
+        .btn-presente { background-color: #ff8c00; color: white; }
+        .btn-mapa { background-color: #f8f8f8; color: #333; border: 1px solid #ddd; }
+        .btn-whatsapp { 
+            background-color: #25d366; 
+            color: white; 
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        }
 
         #lista-presentes {
             display: none;
@@ -86,16 +100,26 @@
             padding: 15px;
             border-radius: 15px;
             border: 2px dashed #ff8c00;
-            max-width: 250px;
+            max-width: 260px;
             text-align: left;
+            animation: fadeIn 0.4s ease-in-out;
         }
 
-        .btn:hover { transform: scale(1.05); opacity: 0.9; }
-        .footer { margin-top: 20px; font-size: 0.9em; color: #777; padding-bottom: 20px; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-        @media (max-width: 1100px) {
-            /* Esconde as magalis laterais em telas médias/pequenas para não sobrepor o convite */
-            .magali-lateral { display: none; }
+        .btn:hover { 
+            transform: scale(1.03); 
+            filter: brightness(1.05);
+        }
+
+        .footer { 
+            margin-top: 20px; 
+            font-size: 1em; 
+            color: #666; 
+            padding-bottom: 10px; 
         }
     </style>
 </head>
@@ -125,7 +149,7 @@
                 <strong>Ideias para a Ísis:</strong>
                 <ul style="padding-left: 20px; margin: 10px 0;">
                     <li>Roupas (Tamanho 3 ou 4)</li>
-                    <li>Brinquedos</li>
+                    <li>Brinquedos educativos</li>
                     <li>Calçados nº 20/21</li>
                 </ul>
             </div>
@@ -147,11 +171,7 @@
     <script>
         function togglePresentes() {
             var lista = document.getElementById("lista-presentes");
-            if (lista.style.display === "block") {
-                lista.style.display = "none";
-            } else {
-                lista.style.display = "block";
-            }
+            lista.style.display = (lista.style.display === "block") ? "none" : "block";
         }
     </script>
 
